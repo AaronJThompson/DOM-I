@@ -81,3 +81,8 @@ const contactP = contact.querySelectorAll("p");
 contactP[0].innerText = siteContent["contact"]['address'];
 contactP[1].innerText = siteContent["contact"]['phone'];
 contactP[2].innerText = siteContent["contact"]['email'];
+
+//Footer
+
+const footer = document.querySelector("footer");
+footer.querySelector("p").innerText = siteContent['footer']['copyright'];
