@@ -41,6 +41,12 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+let header = document.querySelector("header");
+header.querySelectorAll("nav a").forEach((item, index) => item.innerText = siteContent["nav"]["nav-item-" + (index + 1)]);
+
+
+
+// CTA Section
 let cta = document.querySelector(".cta");
 cta.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
 cta.querySelector("h1").innerText = siteContent["cta"]["h1"];
