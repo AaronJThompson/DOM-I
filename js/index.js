@@ -72,3 +72,12 @@ bottomTextContent[1].querySelector("h4").innerText = siteContent["main-content"]
 bottomTextContent[1].querySelector("p").innerText = siteContent["main-content"]["product-content"];
 bottomTextContent[2].querySelector("h4").innerText = siteContent["main-content"]["vision-h4"];
 bottomTextContent[2].querySelector("p").innerText = siteContent["main-content"]["vision-content"];
+
+//Contact section
+
+const contact = document.querySelector(".contact");
+contact.querySelector("h4").innerText = siteContent["contact"]["contact-h4"];
+const contactP = contact.querySelectorAll("p");
+contactP[0].innerText = siteContent["contact"]['address'];
+contactP[1].innerText = siteContent["contact"]['phone'];
+contactP[2].innerText = siteContent["contact"]['email'];
