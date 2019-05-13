@@ -42,9 +42,18 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let header = document.querySelector("header");
-header.querySelectorAll("nav a").forEach((item, index) => item.innerText = siteContent["nav"]["nav-item-" + (index + 1)]);
+header.querySelectorAll("nav a").forEach((item, index) => {
+  item.innerText = siteContent["nav"]["nav-item-" + (index + 1)];
+});
+const nav = header.querySelector("nav");
 
-
+const foo = document.createElement("a");
+const bar = document.createElement("a");
+foo.innerText = "Foo";
+bar.innerText = "Bar";
+nav.appendChild(foo);
+nav.prepend(bar);
+header.querySelectorAll("nav a").forEach(item => item.style = "color: green");
 
 // CTA Section
 let cta = document.querySelector(".cta");
