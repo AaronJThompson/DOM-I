@@ -40,3 +40,59 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let header = document.querySelector("header");
+header.querySelectorAll("nav a").forEach((item, index) => {
+  item.innerText = siteContent["nav"]["nav-item-" + (index + 1)];
+});
+const nav = header.querySelector("nav");
+
+const foo = document.createElement("a");
+const bar = document.createElement("a");
+foo.innerText = "Foo";
+bar.innerText = "Bar";
+nav.appendChild(foo);
+nav.prepend(bar);
+header.querySelectorAll("nav a").forEach(item => item.style = "color: green");
+
+// CTA Section
+let cta = document.querySelector(".cta");
+cta.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
+cta.querySelector("h1").innerText = siteContent["cta"]["h1"];
+cta.querySelector("button").innerText = siteContent["cta"]["button"];
+
+//Main content section
+const mainContent = document.querySelector(".main-content");
+
+const topConent = mainContent.querySelector(".top-content");
+const topTextContent = topConent.querySelectorAll(".text-content");
+topTextContent[0].querySelector("h4").innerText = siteContent["main-content"]["features-h4"];
+topTextContent[0].querySelector("p").innerText = siteContent["main-content"]["features-content"];
+topTextContent[1].querySelector("h4").innerText = siteContent["main-content"]["about-h4"];
+topTextContent[1].querySelector("p").innerText = siteContent["main-content"]["about-content"];
+
+mainContent.querySelector("img").src = siteContent["main-content"]["middle-img-src"];
+
+const bottomContent = mainContent.querySelector(".bottom-content");
+const bottomTextContent = bottomContent.querySelectorAll(".text-content");
+bottomTextContent[0].querySelector("h4").innerText = siteContent["main-content"]["services-h4"];
+bottomTextContent[0].querySelector("p").innerText = siteContent["main-content"]["services-content"];
+bottomTextContent[1].querySelector("h4").innerText = siteContent["main-content"]["product-h4"];
+bottomTextContent[1].querySelector("p").innerText = siteContent["main-content"]["product-content"];
+bottomTextContent[2].querySelector("h4").innerText = siteContent["main-content"]["vision-h4"];
+bottomTextContent[2].querySelector("p").innerText = siteContent["main-content"]["vision-content"];
+
+//Contact section
+
+const contact = document.querySelector(".contact");
+contact.querySelector("h4").innerText = siteContent["contact"]["contact-h4"];
+const contactP = contact.querySelectorAll("p");
+contactP[0].innerText = siteContent["contact"]['address'];
+contactP[1].innerText = siteContent["contact"]['phone'];
+contactP[2].innerText = siteContent["contact"]['email'];
+
+//Footer
+
+const footer = document.querySelector("footer");
+footer.querySelector("p").innerText = siteContent['footer']['copyright'];
+document.querySelector("button").addEventListener("click", event => document.body.removeChild(document.querySelector(".container")));
