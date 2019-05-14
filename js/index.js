@@ -95,3 +95,4 @@ contactP[2].innerText = siteContent["contact"]['email'];
 
 const footer = document.querySelector("footer");
 footer.querySelector("p").innerText = siteContent['footer']['copyright'];
+document.querySelector("button").addEventListener("click", event => document.body.removeChild(document.querySelector(".container")));
